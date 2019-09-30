@@ -1,0 +1,53 @@
+@mixin transform ($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+@mixin transition ($property) {
+  -webkit-transition: $property;
+  -ms-transition: $property;
+  transition: $property;
+}
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: $font-family-sans-serif;
+  background-color: lighten($uoc-masterbrand, 25%);
+  color: $uoc-corporate;
+  ul.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+        background-color:$uoc-masterbrand;
+        color: $uoc-corporate;
+        @include transition(transform 0.5s);
+      }
+      :hover{
+        background-color:$uoc-corporate;
+        color: $uoc-masterbrand;
+        @include transform(translateY(-2px));
+        @include transition(transform 0.2s);
+      }
+    }
+  }
+}
+
+.uoc-logo {
+  display: block;
+  margin-bottom: 20px;
+  max-width: 300px;
+  height: auto;
+}
+
+.uoc-title {
+  font-family: $font-family-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: $uoc-corporate;
+}
