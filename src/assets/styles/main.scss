@@ -5,11 +5,25 @@
 @import "variables";
 
 /**
+ * Import mixins
+ */
+
+@import "mixins";
+
+/**
+ * Import functions
+ */
+
+@import "functions";
+
+/**
  * Import npm dependencies
  * see: https://en.parceljs.org/module_resolution.html
  * see commented examples below
  */
+
 @import "@fortawesome/fontawesome-free/css/all.css";
+
 // @import "some-node-module";
 // @import "@some-company/some-node-module";
 
@@ -19,7 +33,7 @@
  */
 
 @import "layouts/home";
-
+ 
 /**
  * Do NOT include anything else in this file!
  */

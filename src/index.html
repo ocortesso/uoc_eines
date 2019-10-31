@@ -4,19 +4,118 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <title>CV Oscar Cortés Solanes</title>
   </head>
-  <body>
-    <img src="assets/images/logo.png" alt="Universitat Oberta de Catalunya" class="uoc-logo">
-    <h1 class="uoc-title"><i class="fas fa-university"></i>Hello, UOC!</h1>
-    <ul class="menu">
-      <li><a href="#">Apartat 1</a></li>
-      <li><a href="#">Apartat 2</a></li>
-      <li><a href="#">Apartat 3</a></li>
-      <li><a href="#">Apartat 4</a></li>
-    </ul>
+  <body class="pagina">
+    <div class="header-site">
+      <div class="header-site__content center-layout">
+        <ul class="row row--narrow">
+          <li class="row__item row__item--narrow">
+            <a href="https://facebook.com" target="_blank">
+              <i class="row__icon fab fa-facebook"></i>
+            </a>
+          </li>
+          <li class="row__item row__item--narrow">
+              <a href="https://instagram.com" target="_blank">
+                <i class="row__icon fab fa-instagram"></i>
+              </a>
+          </li>
+          <li class="row__item row__item--narrow">
+              <a href="#">
+                <i class="row__icon fab fa-whatsapp"></i>
+              </a>
+          </li>
+          <li class="row__item row__item--narrow">
+              <a href="#">
+                <i class="row__icon fas fa-at"></i>
+              </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="row center-layout row--middle">
+      <div class="row__item row__item--portada">
+        <p><img class="row__impact" src="../src/assets/images/foto_cv.jpg"></p>
+      </div>
+      <div class="row__item row__item--card">
+        <h1 class="row__title">Oscar Cortés Solanes</h1>
+        <h2 class="row__subtitle">Front end developer i músic</h2>
+      </div>
+    </div>
 
+    <ul class="row row--menu center-layout">
+      <li class="row__item row__item--button">
+        <a class="row__button" href="#presentacio">Presentació</a>
+      </li>
+      <li class="row__item row__item--button">
+        <a class="row__button" href="#estudis">Estudis</a>
+      </li>
+      <li class="row__item row__item--button">
+          <a class="row__button" href="#experiencia">Experiència laboral</a>
+      </li>
+      <li class="row__item row__item--button">
+          <a class="row__button" href="#musica">Música</a>
+      </li>
+    </ul>  
+
+    <div class="info center-layout">
+        <h2 class="info__apartat" id="presentacio">Presentació</h2>
+        <p class="info__text">Benvinguts a la meva pàgina de currículum vitae. Espero que llegint aquestes línies i consultant els enllaços us feu una idea de a què em dedico i que faig a la vida.</p>
+        <p class="info__text">Atentament,<br>
+        Oscar</p>
+      </div>   
+    <div class="info center-layout">
+      <h2 class="info__apartat" id="estudis">Estudis</h2>
+      <ul class="info__llistat">
+        <li>Màster Universitari en Desenvolupament de Llocs y Aplicacions Web - Actualitat</li>
+        <li>Màster Universitari en Aplicacions Multimedia - 2016</li>
+        <li>Diplomatura en Ciències Empresarials - 2008</li>
+        <li>Grau Superior en Administració i Finances - 2006</li>
+      </ul>
+    </div>
+    <div class="info center-layout">
+        <h2 class="info__apartat" id="experiencia">Experiència laboral</h2>
+        <ul class="info__llistat">
+          <li>Universitat Pompeu Fabra (Acualitat - 2013)
+            <ul>
+              <li>front end developer de la web institucional</li>
+              <li>Disseny de la web institucional i el campus global</li>
+              <li>Administració d'eines de comunicació institucional</li>
+            </ul>
+          </li>
+          <h3>Fites aconseguides</h3>
+
+          <p>La <a class="info__link" href="https://www.upf.edu/web/360upf/" target="_blank"><strong>Revista 360upf</strong></a>, que va per la 5a edició, ha aconseguit:</p>
+
+          <ul>
+            <li><a class="info__link" href="https://www.upf.edu/web/e-noticies/inici/-/asset_publisher/wEpPxsVRD6Vt/content/id/226791454/maximized#.XbseOej0lPZ" target="_blank">EUPRIO Award 2019 – Best European Communication Projects</a></li>
+            <li><a class="info__link" href="https://www.upf.edu/web/e-noticies/inici/-/asset_publisher/wEpPxsVRD6Vt/content/id/216999465/maximized#.XbseOej0lPZ" target="_blank">Premi Innovació en Comunicació del Col·legi de Periodistes de Catalunya 2018</a></li>
+          </ul>
+
+          <p>La <a class="info__link" href="http://upf.edu" target="_blank"><strong>web de la UPF</strong></a> ha aconseguit una molt bona acollida i acosta la Universitat als estàndards més moderns de maquetació web.</p>
+
+          <p>El nou <strong>Campus Global</strong> ha aconseguit simplificar l'experiècia d'usuari i agilitzar-ne l'ús.</p>
+
+          <li>Universitat Pompeu Fabra: programador web (2013-2009)</li>
+          <li>Escola Augusta: Administratiu (2009-2004)</li>
+          <li>Esports Mañanes: depenent de botiga (2004-2003)</li>
+          <li>Miró i Associats: tasques de comptabilitat (2003)</li>
+        </ul>
+      </div>
+      <div class="info center-layout">
+          <h2 class="info__apartat" id="musica">Música</h2>
+          <p class="info__text">Toco el baix elèctric desde els 16 anys i he tingut infinitat de grups en aquests anys, com a mostra, alguns noms</p>
+          <ul class="info__llistat">
+            <li><a class="info__link" href="http://www.taooficial.com/" target="_blank" >TAO</a></li>
+            <li><a class="info__link" href="https://www.facebook.com/LIKEASTONE.AUDIOSLAVETRIBUTE" target="_blank" >LIKE A STONE -  Audioslave Tribute Band</a></li>
+            <li><a class="info__link" href="https://www.facebook.com/DAERIAOFICIAL/" target="_blank">Daeria</a></li>
+            <li><a class="info__link" href="https://www.facebook.com/masterly2011/" target="_blank">Masterly</a></li>
+            <li><a class="info__link" href="https://www.facebook.com/amadeus.contratacion" target="_blank">Amadeüs</a></li>
+          </ul>
+        </div>
     <script src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
   </body>
 </html>

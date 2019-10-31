@@ -1,53 +1,183 @@
-@mixin transform ($property) {
-  -webkit-transform: $property;
-  -ms-transform: $property;
-  transform: $property;
-}
-@mixin transition ($property) {
-  -webkit-transition: $property;
-  -ms-transition: $property;
-  transition: $property;
-}
-body {
+/*
+ * Pàgina és la classe que té el body i només s'aplica una vegada.
+*/
+
+.pagina {
   margin: 0;
-  padding: 2em;
+  padding: 0;
+  background-color: $backgroundcolor;
+  color: $color;
   font-family: $font-family-sans-serif;
-  background-color: lighten($uoc-masterbrand, 25%);
-  color: $uoc-corporate;
-  ul.menu {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    li {
-      display: inline-block;
-      a {
-        display: block;
-        padding: 6px 12px;
-        text-decoration: none;
-        background-color:$uoc-masterbrand;
-        color: $uoc-corporate;
-        @include transition(transform 0.5s);
-      }
-      :hover{
-        background-color:$uoc-corporate;
-        color: $uoc-masterbrand;
-        @include transform(translateY(-2px));
-        @include transition(transform 0.2s);
-      }
-    }
+  font-size: 16px;
+}
+
+/*
+ * center-layout és una classe reutilitzable que ens permet centrar el contingut amb un ample de 1170px de màxim
+*/
+
+.center-layout {
+  width: 100%;
+  max-width: $maxwidth*1px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/*
+ * header-site permet pintar la capçalera al 100% d'ample.
+*/
+
+.header-site {
+  max-height: 60px;
+  background-color: $headercolor;
+}
+
+/*
+ * block d'estructura row
+*/
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.row--middle { //permet aliniar el text verticalment
+  align-content: baseline;
+  align-items: center;
+}
+
+.row--narrow { //és una variació sense marges i aliniada a la dreta
+  justify-content: flex-end;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.row--menu { //elimina el padding de la ul row--menu
+  padding: 0;
+}
+
+.row__item { //item de la row
+  flex-grow: 1;
+  padding: 1em;
+  list-style: none;
+}
+
+.row__item--narrow { //els items no ocupen el 100% 
+  min-height: auto;
+  flex-grow: 0;
+}
+
+.row__title,
+.row__subtitle { //per donar format a h1 i h2
+  font-family: $font-title;
+  margin: 0;
+}
+
+.row__impact { //imatge de la fitxa de presentació
+  transform: rotate(-15deg);
+  box-shadow: $color -0.5em 0.5em;
+  max-width: ruleofthree(25, $maxwidth) *1px; //es crida la funció ruleofthree, que el que fa és una regla de tres per passar el % indicat a px
+  border-radius: 50%;
+}
+
+.row__item--card { //text de la fitxa de presentació
+  font-family: $font-title;
+  font-size: 2.2em;
+}
+
+.row__icon {
+  color: $layoutbackground;
+  transform: scale(-10deg);
+  box-shadow: -0.2em 0.2em $color;
+  border-radius: 50%;
+  font-size: 1.5em;
+
+  @include transition(transform 0.2s);
+
+  &:hover {
+    @include transform(scale(1.2));
+    @include transition(transform 0.2s);
   }
 }
 
-.uoc-logo {
+.row__button {
+  background-color: $headercolor;
+  color: $layoutbackground;
   display: block;
-  margin-bottom: 20px;
-  max-width: 300px;
-  height: auto;
+  padding: 1.2em;
+  border-radius: 0.2em;
+  text-decoration: none;
+
+  @include transition(transform 0.2s);
+  
+  &:hover {
+    text-decoration: none;
+    background-color: $color;
+    box-shadow: $headercolor -0.5em 0.5em;
+  
+    @include transition(transform 0.2s);
+  }
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: $uoc-corporate;
+@media (max-width: 480px) { //ajustaments row per a mòbils
+  .row__item {
+    width: 100%;
+  }
+
+  .row__item--narrow {
+    width: auto;
+  }
+
+  .row__item--portada {
+    text-align: center;
+  }
+	
+  .row__impact {
+    max-width: 70%;
+  }
+
+  .row__item--card {
+    font-size: 1em;
+  }
+
+  .row__item--button {
+    padding: 0.5em;
+  }
+}
+
+/*
+ * block d'estructura info
+*/
+
+.info {
+  font-size: 1.2em;
+  line-height: 1.4;
+  margin-bottom: 2em;
+  box-shadow: $color -0.5em 0.5em;
+  padding: 2em;
+  box-sizing: border-box;
+  background-color: $layoutbackground;
+}
+
+.info__apartat {
+  margin-bottom: 1em;
+  font-family: $font-title;
+}
+
+.info__link {
+  color: $color;
+	
+  &:hover {
+    color: $headercolor;
+  }
+}
+
+@media (max-width: 480px) { //ajustaments info per a mòbils
+  .info {
+    font-size: 1em;
+    line-height: 1.2;
+  }
 }

@@ -1,0 +1,5 @@
+@function ruleofthree ($number,$total) {
+  $result: ($number/100) * $total;
+	
+  @return $result;
+}
